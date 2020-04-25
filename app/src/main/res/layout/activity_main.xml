@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:background="@color/colorBackMiddle"
+    android:id="@+id/coronaMainSwipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutTopHEAD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHEADSource"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Source: www.worldometers.info/coronavirus"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorHighlights"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text=" "
+                    android:textAlignment="center"
+                    android:textColor="@color/colorHighlights"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                    android:id="@+id/layoutTopCases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_generic"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Total Cases"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewCases"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:shadowColor="@color/colorShadow"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="1"
+                        android:text="00000"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutTopActive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/back_generic"
+                android:orientation="vertical"
+                android:padding="3dp" >
+
+                <TextView
+                    android:id="@+id/textViewActiveTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Active"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPurpleDark"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewActive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:shadowColor="@color/colorShadow"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="00000"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPurpleDark"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <LinearLayout
+                    android:id="@+id/layoutTopRecovered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_generic"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/textViewRecoveredTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Recovered"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorGreenDark"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewRecovered"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:shadowColor="@color/colorShadow"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="1"
+                        android:text="00000"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorGreenDark"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            <LinearLayout
+                        android:id="@+id/layoutTopDeaths"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/back_generic"
+                        android:orientation="vertical"
+                        android:padding="3dp" >
+
+                        <TextView
+                            android:id="@+id/textViewDeathsTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Deaths"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorRedDark"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textViewDeaths"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:shadowColor="@color/colorShadow"
+                            android:shadowDx="0"
+                            android:shadowDy="2"
+                            android:shadowRadius="1"
+                            android:text="00000"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorRedDark"
+                            android:textSize="24dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <LinearLayout
+                android:id="@+id/layoutTopNewCases"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/back_generic"
+                android:orientation="vertical"
+                android:padding="3dp" >
+
+                <TextView
+                    android:id="@+id/textViewNewCasesTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Cases Today"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorNewDark"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewNewCases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:shadowColor="@color/colorShadow"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="00000"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorNewDark"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutTopNewDeaths"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/back_generic"
+                android:orientation="vertical"
+                android:padding="3dp" >
+
+                <TextView
+                    android:id="@+id/textViewNewDeathsTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Deaths Today"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorNewDark"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewNewDeaths"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:shadowColor="@color/colorShadow"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="00000"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorNewDark"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/back_generic"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/textCountriesHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="3dp"
+                    android:text="Confirmed Cases by Country"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorTitles"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="1dp"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:id="@+id/textSearchBox"
+                        android:textSize="12dp"
+                        android:maxLines="1"
+                        android:padding="3dp"
+                        android:background="@drawable/back_search_text"
+                        android:hint="Search here by Country name"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
+                        android:textColor="@color/colorBlueDark"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/back_table_row"
+                    android:orientation="horizontal"
+                    android:weightSum="7.8">
+
+                    <TextView
+                        android:id="@+id/colCountryNameHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.8"
+                        android:background="@drawable/back_table_cell"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="2dp"
+                        android:text="Country"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/colCasesHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Cases"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"></TextView>
+                    <TextView
+                        android:id="@+id/colNewCasesHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Cases Today"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorNewDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/colRecoveredHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Recover"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorGreenDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/colDeathsHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Deaths"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorRedDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"></TextView>
+                    <TextView
+                        android:id="@+id/colNewDeathsHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Deaths Today"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorNewDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"></TextView>
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="2dp">
+
+                    <ListView
+                        android:id="@+id/listViewCountries"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </ListView>
+
+                    <ProgressBar
+                        android:id="@+id/countryProgressBar"
+                        style="?android:attr/progressBarStyleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
