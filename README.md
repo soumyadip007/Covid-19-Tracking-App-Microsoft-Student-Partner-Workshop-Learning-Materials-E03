@@ -7,5 +7,5 @@ This repository contains all codes and materials of the current session.
 <img src="./screenshots/1.png" >
 
 
-# Event #01
+# Event #03
 <img src="./screenshots/2.png" >
